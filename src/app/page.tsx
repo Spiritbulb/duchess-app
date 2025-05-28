@@ -6,14 +6,7 @@ export default function Page() {
   return (
     <div>
       <Navbar />
-      <div>
-        < Image
-          src={"/duchess.png"}
-          alt="Duchess Logo"
-          width={300}
-          height={300}
-          className="dropshadow-lg" />
-      </div>
+      
       <h1 className="text-3xl font-bold underline">
         Duchess Women's Group
       </h1>
