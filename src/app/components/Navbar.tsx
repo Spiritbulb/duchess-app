@@ -2,12 +2,26 @@
 
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
     const router = useRouter();
     const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navigate = (path: string) => {
         router.push(path);
@@ -24,17 +38,26 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header className={`sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/30 backdrop-blur' : 'bg-transparent border-transparent'}`}>
+            <div className="container mx-auto px-4 py-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
-                    <div className="flex-shrink-0">
+                    {/* Logo with scroll effect */}
+                    <div className="flex-shrink-0 relative h-12 w-32">
                         <Image
-                            src="/duchesslogo.png"
+                            src="/duchess-white.png"
                             alt="Duchess Logo"
-                            width={120}
-                            height={48}
-                            className="hover:opacity-90 transition-opacity cursor-pointer"
+                            width={180}
+                            height={72}
+                            className={`absolute hover:opacity-90 transition-opacity cursor-pointer transition-all duration-300 ${isScrolled ? 'opacity-0' : 'opacity-100'}`}
+                            onClick={() => navigate('/')}
+                            priority
+                        />
+                        <Image
+                            src="/duchess-white.png"
+                            alt="Duchess Logo"
+                            width={180}
+                            height={72}
+                            className={`absolute hover:opacity-90 transition-opacity cursor-pointer transition-all duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}
                             onClick={() => navigate('/')}
                             priority
                         />
@@ -49,8 +72,8 @@ export default function Navbar() {
                                 className={`px-1 py-2 text-sm font-medium transition-colors duration-200
                                     ${
                                         pathname === item.path
-                                            ? 'text-indigo-600 border-b-2 border-indigo-600'
-                                            : 'text-gray-500 hover:text-gray-900'
+                                            ? 'text-[#d1c578] border-b-2 border-[#d1c578]'
+                                            : `text-${isScrolled ? 'white' : 'white'} hover:text-[#d1c578]`
                                     }`}
                             >
                                 {item.name}
@@ -62,7 +85,7 @@ export default function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none"
+                            className={`inline-flex items-center justify-center p-2 rounded-md focus:outline-none ${isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-[#d1c578]'}`}
                             aria-expanded="false"
                         >
                             <span className="sr-only">
@@ -106,7 +129,7 @@ export default function Navbar() {
 
             {/* Mobile Navigation */}
             {mobileMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200">
+                <div className={`md:hidden ${isScrolled ? 'bg-white' : 'bg-gray-900'} border-t ${isScrolled ? 'border-gray-200' : 'border-gray-800'}`}>
                     <div className="px-2 pt-2 pb-3 space-y-1">
                         {navItems.map((item) => (
                             <button
@@ -116,7 +139,7 @@ export default function Navbar() {
                                     ${
                                         pathname === item.path
                                             ? 'bg-indigo-50 text-indigo-700'
-                                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                            : `text-${isScrolled ? 'gray-600' : 'gray-300'} hover:${isScrolled ? 'bg-gray-50' : 'bg-gray-800'} hover:text-${isScrolled ? 'gray-900' : 'white'}`
                                     }`}
                             >
                                 {item.name}

@@ -24,3 +24,21 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+ @keyframes infinite-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-134%);
+          }
+        }
+        
+        .animate-infinite-scroll {
+          animation: infinite-scroll 20s infinite linear;
+          display: inline-flex;
+        }
+        
+        .animate-infinite-scroll:hover {
+          animation-play-state: paused;
+        }
