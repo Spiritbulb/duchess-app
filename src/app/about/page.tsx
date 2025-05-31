@@ -11,7 +11,6 @@ import Mission from "../components/mission";
 export default function AboutPage() {
     return (
         <div>
-            <Navbar />
 
             {/* Banner section with overlayed business card */}
             <div className="relative">
@@ -33,7 +32,6 @@ export default function AboutPage() {
             <Mission />
 
             <Team />
-            <Footer />
 
         </div>
     );
