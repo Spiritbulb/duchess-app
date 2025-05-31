@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black border-t border-[#d1c578]/20 pt-20 pb-12 relative">
+    <div className="bg-black border-t border-[#d1c578]/20 pt-20 pb-12 relative">
       {/* Decorative Top */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="w-24 h-1 bg-gradient-to-r from-[#d1c578] to-transparent mb-8"></div>
@@ -130,11 +130,12 @@ export default function Footer() {
       </div>
 
       {/* The Spirit Watermark */}
-      <a 
+      <div className='mt-10'>
+        <a 
         href="https://spiritbulb.org/" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="absolute bottom-4 right-4 opacity-20 hover:opacity-40 transition-opacity duration-300 hover:scale-105 transform"
+        className="absolute left-1/2 bottom-4 opacity-20 hover:opacity-40 transition-opacity duration-300 hover:scale-105 transform"
       >
         <Image 
           src="/watermark-ts.png" 
@@ -144,7 +145,9 @@ export default function Footer() {
           className="filter grayscale"
         />
       </a>
-    </footer>
+      </div>
+      
+    </div>
   );
 }
 

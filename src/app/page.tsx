@@ -15,7 +15,7 @@ export default function Page() {
         <meta rel="icon" property="/favicon.ico"/>
       </Head>
       
-      <Navbar />
+  
       
       <HeroSection/>
       <Values/>
@@ -23,7 +23,7 @@ export default function Page() {
       <Testimonials/>
       <CTA/>
 
-<Footer/>
+
     </div>
   )
 }
