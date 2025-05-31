@@ -1,5 +1,6 @@
 import { DecorativeGoldElement } from "./GoldElement";
 import Link from "next/link";
+import { MobileElement } from "./mobileelement";
 
 export default function AboutUs() {
     return (
@@ -55,6 +56,8 @@ export default function AboutUs() {
                         <DecorativeGoldElement />
                     </div>
                 </div>
+                <MobileElement />
+
                 {/* Bottom border animation */}
                 <div className="
                 absolute bottom-0 left-0 right-0 
