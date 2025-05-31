@@ -1,3 +1,5 @@
+import { blackMango } from "@/lib/fonts";
+
 export default function Testimonials() {
   return (
     <section className="relative py-28 bg-black overflow-hidden border-t border-b border-[#d1c578]/20">
@@ -15,9 +17,11 @@ export default function Testimonials() {
             </span>
             <div className="w-12 h-px bg-[#d1c578]" />
           </div>
+          <div className={blackMango.className}>
           <h2 className="text-4xl sm:text-5xl font-black-mango text-white mb-4">
             In Their <span className="text-[#d1c578]">Own Words</span>
           </h2>
+          </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Hear from our members about their transformative journeys with Duchess
           </p>

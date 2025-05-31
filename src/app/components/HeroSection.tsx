@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { DecorativeGoldElement } from "./GoldElement";
+import '@/app/fonts.css'
+import { blackMango } from "@/lib/fonts";
+
 
 export default function HeroSection() {
   return (
     <section className="relative bg-black overflow-hidden isolate min-h-[90vh] flex items-center">
       {/* Luxury Texture Background */}
-      <div className="absolute inset-0 bg-[url('/assets/luxury-pattern.png')] opacity-5 z-0" />
+      <div className="absolute inset-0 bg-[url('/luxury-pattern.png')] opacity-5 z-0" />
       
       {/* Animated Gold Particles */}
       <div className="absolute inset-0 overflow-hidden z-0">
@@ -38,13 +41,15 @@ export default function HeroSection() {
               </span>
               <div className="w-12 h-px bg-[#d1c578]" />
             </div>
-
+            <div className={blackMango.className}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl leading-tight font-black-mango">
               <span className="text-white">Refining</span>{' '}
               <span className="text-[#d1c578]">Wealth</span>{' '}
               <span className="text-white">With</span>{' '}
               <span className="text-[#d1c578]">Purpose</span>
             </h1>
+            </div>
+            
             
             <p className="text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Duchess redefines financial empowerment through curated investment strategies, 

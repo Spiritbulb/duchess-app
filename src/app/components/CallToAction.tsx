@@ -1,3 +1,5 @@
+import { blackMango } from "@/lib/fonts";
+
 export default function CTA() {
   return (
     <section className="relative py-28 bg-black overflow-hidden border-t border-[#d1c578]/20">
@@ -14,13 +16,14 @@ export default function CTA() {
           </span>
           <div className="w-12 h-px bg-[#d1c578]" />
         </div>
-        
+        <div className={blackMango.className}>
         <h2 className="text-4xl sm:text-5xl font-black-mango text-white mb-6">
-          <span className="text-[#d1c578]">Secure Your Seat</span> at <br className="hidden sm:block" />The Investors' Table
+          <span className="text-[#d1c578]">Save Your Spot</span> at <br className="hidden sm:block" />The Investors' Table
         </h2>
+        </div>
         
         <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-          Applications for our Q1 cohort close soon. Join 327 elite women investors building 
+          Applications for our Q1 cohort close soon. Join 30 elite women investors building 
           generational wealth through our proven framework.
         </p>
         

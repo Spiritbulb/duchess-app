@@ -1,3 +1,5 @@
+import { blackMango } from "@/lib/fonts";
+
 export default function Values() {
   return (
     <section className="py-24 bg-black border-t border-[#d1c578]/10">
@@ -11,9 +13,11 @@ export default function Values() {
             </span>
             <div className="w-12 h-px bg-[#d1c578]" />
           </div>
+          <div className={blackMango.className}>
           <h2 className="text-4xl sm:text-5xl font-black-mango text-white mb-6">
             The <span className="text-[#d1c578]">Duchess</span> Difference
           </h2>
+          </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             We redefine wealth building through three core principles that set us apart
           </p>

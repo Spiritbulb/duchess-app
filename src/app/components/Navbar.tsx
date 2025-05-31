@@ -38,7 +38,7 @@ export default function Navbar() {
     ];
 
     return (
-        <header className={`sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/30 backdrop-blur' : 'bg-transparent border-transparent'}`}>
+        <div className={`sticky top-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black/30 backdrop-blur' : 'bg-transparent border-transparent'}`}>
             <div className="container mx-auto px-4 py-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo with scroll effect */}
@@ -148,6 +148,6 @@ export default function Navbar() {
                     </div>
                 </div>
             )}
-        </header>
+        </div>
     );
 }
