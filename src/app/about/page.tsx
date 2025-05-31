@@ -7,6 +7,7 @@ import AboutUs from "../components/aboutus";
 import OurWork from "../components/ourwork";
 import Team from "../components/team";
 import Footer from "../components/Footer";
+import Mission from "../components/mission";
 export default function AboutPage() {
     return (
         <div>
@@ -29,6 +30,7 @@ export default function AboutPage() {
             <AboutUs />
 
             <OurWork />
+            <Mission />
 
             <Team />
             <Footer />

@@ -10,7 +10,7 @@ export default function AboutUs() {
 
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-4 mb-6">
+                    <div id="about" className="inline-flex items-center gap-4 mb-6">
                         <div className="w-12 h-px bg-[#d1c578]" />
                         <span className="text-[#d1c578] uppercase tracking-widest text-sm font-medium">
                             About Us

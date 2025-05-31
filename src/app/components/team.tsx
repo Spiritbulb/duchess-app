@@ -3,7 +3,7 @@ export default function Team() {
         <section className="py-24 bg-black border-t border-[#d1c578]/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-20">
+                <div id="team" className="text-center mb-20">
                     <div className="inline-flex items-center gap-4 mb-6">
                         <div className="w-12 h-px bg-[#d1c578]" />
                         <span className="text-[#d1c578] uppercase tracking-widest text-sm font-medium">
