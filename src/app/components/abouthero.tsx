@@ -59,7 +59,7 @@ export default function ImageBanner() {
                         playsInline 
                         className="absolute inset-0 h-full w-full object-cover"
                     >
-                        <source src="/build.mp4" type="video/mp4" />
+                        <source src="https://files.spiritbulb.org/2229907-uhd_3840_2160_25fps.mp4" type="video/mp4" />
                     </video>
                 </div>
             </div>
