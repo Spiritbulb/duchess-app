@@ -1,43 +1,28 @@
-'use client';
-
 interface ServiceButtonProps {
     label: string;
-    sectionId?: string;
+    sectionId: string;
+    className?: string;
 }
 
-export function ServiceButton({ label, sectionId }: ServiceButtonProps) {
-    const handleClick = () => {
-        const id = sectionId || label.toLowerCase().replace(/\s+/g, '-');
-        const element = document.getElementById(id);
-
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    };
-
+export function ServiceButton({ label, sectionId, className = "" }: ServiceButtonProps) {
     return (
-        <button
-            onClick={handleClick}
-            className="bg-[#d1c578] hover:bg-[#c2b46a] 
-                text-black font-bold 
-                py-3 px-5 sm:py-4 sm:px-6 md:py-5 md:px-8
-                rounded-none 
-                flex
-                flex-col
-                animate-[slow-pulse_5s_infinite]
-                transition-all duration-300 
-                hover:scale-[0.98]
-                border-2 border-[#d1c578]
-                text-sm sm:text-base md:text-lg
-                w-full max-w-[180px] sm:max-w-xs
-                shadow-md
-                opacity-90 hover:opacity-100
-                cursor-pointer"
+        <a
+            href={`#${sectionId}`}
+            className={`flex items-center justify-center 
+                p-4 md:p-5
+                text-sm md:text-base
+                font-medium uppercase tracking-wider
+                border border-[#d1c578]/50
+                bg-white hover:bg-white
+                text-gray-800 hover:text-[#8a7a3d]
+                transition-all duration-300 ease-in-out
+                cursor-pointer
+                rounded-lg
+                shadow-md hover:shadow-lg
+                hover:-translate-y-1
+                ${className}`}
         >
             {label}
-        </button>
+        </a>
     );
 }

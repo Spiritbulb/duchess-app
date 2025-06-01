@@ -7,20 +7,24 @@ interface ContactItemProps {
 }
 
 export function ContactItem({ type, value, highlight, onClick, className = "" }: ContactItemProps) {
-    const baseClasses = "block text-sm px-4 py-1 my-7 flex";
-    const bg = highlight ? "bg-yellow-300 font-bold" : "bg-gray-100";
+    const baseClasses = "flex items-center px-5 py-3 rounded-sm text-sm tracking-wide";
+    const highlightClasses = highlight 
+        ? "bg-[#f8e8a0] text-black font-medium border-l-4 border-black" 
+        : "bg-[#f9f7ec] text-gray-800 font-normal";
+    
     const icon: { [key in ContactItemProps["type"]]: string } = {
-        email: "📧",
+        email: "✉️",
         phone: "📞",
-        address: "🏠"
+        address: "📍"
     };
 
     return (
         <div
-            className={`${baseClasses} ${bg} ${className}`}
+            className={`${baseClasses} ${highlightClasses} ${className}`}
+            onClick={onClick}
         >
-            <span className="inline-block mr-2">{icon[type]}</span>
-            <span className="text-gray-800">{value}</span>
+            <span className="inline-block mr-3 text-base opacity-80">{icon[type]}</span>
+            <span>{value}</span>
         </div>
     );
 }

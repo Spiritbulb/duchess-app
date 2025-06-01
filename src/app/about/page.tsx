@@ -1,38 +1,47 @@
-// app/about/page.tsx or pages/about.tsx (depending on your Next.js setup)
 import ImageBanner from "../components/abouthero";
 import BusinessCard from "../components/businesscard";
-import Navbar from "../components/Navbar";
 import About from "../components/aboutt";
 import AboutUs from "../components/aboutus";
 import OurWork from "../components/ourwork";
 import Team from "../components/team";
-import Footer from "../components/Footer";
 import Mission from "../components/mission";
+import CTA from "../components/CallToAction";
+
 export default function AboutPage() {
     return (
-        <div>
-
-            {/* Banner section with overlayed business card */}
+        <div className="relative">
+            {/* Hero Section with overlapping elements */}
             <div className="relative">
                 <ImageBanner />
-                <div className="absolute inset-32 items-left justify-left">
-                    <BusinessCard />
+            </div>
+           
+            {/* Navigation Buttons - Centered above content */}
+                <div className="absolute mt-72 left-0 right-0 z-10 px-6">
+                    <div className="max-w-7xl mx-auto">
+                        <About />
+                    </div>
                 </div>
+
+            {/* Content Sections with proper spacing */}
+            <div className="pt-10 pb-20 px-6 max-w-7xl mx-auto space-y-2">
+                <section id="about" className="scroll-mt-24">
+                    <AboutUs />
+                </section>
+                
+                <section id="work" className="scroll-mt-24">
+                    <OurWork />
+                </section>
+                
+                <section id="mission" className="scroll-mt-24">
+                    <Mission />
+                </section>
+                
+                <section id="team" className="scroll-mt-24">
+                    <Team />
+                </section>
             </div>
-            <div className="absolute right-9 py-10 px-10 space-y-10">
 
-                <h1 className="text-4xl font-bold mb-6 text-white">
-                    About Us</h1>
-                <About />
-            </div>
-
-            <AboutUs />
-
-            <OurWork />
-            <Mission />
-
-            <Team />
-
+            <CTA/>
         </div>
     );
 }
